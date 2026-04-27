@@ -1,0 +1,5 @@
+def words(w):
+   return list(filter(lambda o:len(o)>5,w))
+word=input("Enter words:").split()
+a=words(word)
+print("Words with more than 5 characters:",a)
