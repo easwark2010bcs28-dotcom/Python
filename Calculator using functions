@@ -1,0 +1,30 @@
+def add(a,b):
+   return a+b
+def sub(a,b):
+   return a-b
+def mul(a,b):
+   return a*b
+def div(a,b):
+   return a/b
+
+a=int(input("Enter a number:"))
+b=int(input("Enter a numnber:"))
+while True:
+   c=input("Enter your choice(+,-,*,/):")
+   if c=='+':
+      ad=add(a,b)
+      print("Addition of",a,b,"is",ad)
+   elif c=='-':
+      s=sub(a,b)
+      print("Subtraction of",a,b,"is",s)
+   elif c=='*':
+      m=mul(a,b)
+      print("Multiplication of",a,b,"is",m)
+   elif c=='/':
+      d=div(a,b)
+      print("Division of",a,b,"is",d)
+   elif c=="e":
+      print("Exit")
+      break
+   else:
+      print("Invalid")
