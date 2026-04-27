@@ -1,0 +1,13 @@
+def unique(lst):
+   l1=[]
+   for i in lst:
+    if lst.count(i)==1:
+       l1.append(i)
+   if len(l1)==0:
+      print("No unique elements")
+   else:
+      print("Unique elements:",l1)
+
+import unique
+l=eval(input("Enter list elements:"))
+unique.unique(l)
