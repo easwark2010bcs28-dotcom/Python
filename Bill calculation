@@ -1,0 +1,38 @@
+def bill(items,quantity):
+        total=sum(items[item]*quantity[item] for item in quantity if item in items)
+        return total
+def discountgst(total,discount_rate=30,gst_rate=5):
+        discount=(discount_rate/100)*total if total>2000 else 0
+        gst=(gst_rate/100)*(total-discount)
+        return discount,gst
+def money(total,discount,gst):
+        return total-discount+gst
+def bills(items,quantity):
+        total=bill(items,quantity)
+        discount,gst=discountgst(total)
+        print("\n","="*40)
+        print("\n-------------Final bill--------------")
+        print("\n","="*40)
+        print("\n{:<15}{:<10}{:<10}{:<10}".format("Item","Qty","Price","Total"))
+        print("\n","-"*40)
+        for item,qty in quantity.items():
+                if item in items:
+                        print("{:<15}{:<10}{:<10}{:<10}".format(item,qty,items[item],items[item]*qty))
+        print('-'*40)
+        print("{:<35}Rs{:.2f}".format("Subtotal",total))
+        print("{:<35}Rs{:.2f}".format("Discount(30% if >2000)",discount))
+        print("{:<35}Rs{:.2f}".format("GST(5%)",gst))
+        print("="*40)
+        print("{:<35}Rs{:.2f}".format("Final amount",money(total,discount,gst)))
+        print("="*40)
+items={"kunafa":100,"waffles":120,"pizza":200}
+quantity={}
+n=int(input("Enter numberof items:"))
+for i in range(n):
+        item=input("Enter item name:").lower()
+        qty=int(input("Enter quantity"))
+        if item in items:
+                quantity[item]=qty
+        else:
+                print("Item '{}' not available!".format(item))
+bills(items,quantity)
