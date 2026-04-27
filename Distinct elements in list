@@ -1,0 +1,5 @@
+def distinct(l):
+   return list(set(l))
+l=eval(input("Enter elements of list:"))
+dis=distinct(l)
+print("List with distinct elements:",dis)
