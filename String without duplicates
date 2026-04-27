@@ -1,0 +1,19 @@
+def remove(s):
+   l=[]
+   seen=set()
+   for i in s:
+      if i not in seen:
+       l.append(i)
+       seen.add(i)
+   return " ".join(l)
+def toggle(s):
+   u="".join(map(str.upper,s))
+   l="".join(map(str.lower,s))
+   return u,l
+string=input("Enter string")
+s=remove(string)
+upper,lower=toggle(s)
+
+print("String after removing duplicate:",s)
+print("Uppercase:",upper)
+print("Lowercase:",lower)
