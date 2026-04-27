@@ -1,0 +1,21 @@
+def countones(row):
+       return row.count(1)
+def findmax(matrix):
+        maxones=0
+        maxrows=0
+        for i in range(len(matrix)):
+                ones=countones(matrix[i])
+                if ones>maxones:
+                        maxones=ones
+                        maxrows=i
+        return maxrows,maxones
+rows=int(input("Enter no of rows:"))
+cols=int(input("Enter no of cols:"))
+matrix=[]
+print("Enter binary matrix(0s and 1s only)")
+for i in range(rows):
+        row=list(map(int,input().split()))
+        matrix.append(row)
+row,ones=findmax(matrix)
+print("\nRow with maximum ones:",row)
+print("Count of ones in that row",ones)
