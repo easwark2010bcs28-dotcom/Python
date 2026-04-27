@@ -1,0 +1,11 @@
+def prime(n,fac=2):
+   if n<=1:
+      return
+   if n%fac==0:
+      print(fac,end=" ")
+      prime(n//fac,fac)
+   else:
+      prime(n,fac+1)
+n1=int(input("Enter a number:"))
+print("Prime factors:",end=" ")
+prime(n1)
